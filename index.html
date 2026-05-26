@@ -3,256 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RascaRepara - Expertos en Reparación de Rascadores para Gatos</title>
+    <title>Rapaza | Restauración Técnica de Rascadores</title>
     <style>
+        :root {
+            --primary: #2c3e50; /* Azul oscuro corporativo */
+            --secondary: #7f8c8d; /* Gris profesional */
+            --accent: #e67e22; /* Naranja sobrio para llamadas a la acción */
+            --light: #ecf0f1;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
+            background-color: var(--white);
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            height: 80px;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .logo span {
-            color: #ffd700;
-        }
-
-        nav ul {
+        .nav-links {
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
 
-        nav a {
-            color: white;
+        .nav-links a {
             text-decoration: none;
+            color: var(--text);
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #ffd700;
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-contact {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #34495e;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), 
-                        url('https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=1920') center/cover;
-            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1545249390-6bdfa286032f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            color: white;
-            padding: 0 2rem;
-            margin-top: 60px;
+            color: var(--white);
+            margin-top: 80px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+        .hero-content {
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
-        .btn {
-            display: inline-block;
-            background: #ffd700;
-            color: #764ba2;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s;
         }
 
-        .btn:hover {
+        .btn-hero:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            background-color: #d35400;
         }
 
-        /* Services Section */
+        /* Services */
         .services {
-            padding: 5rem 2rem;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background-color: var(--light);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #764ba2;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            transform: translateY(-5px);
         }
 
         .service-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
 
-        /* Why Choose Us */
-        .why-us {
-            padding: 5rem 2rem;
-            background: white;
+        .service-card p {
+            color: var(--secondary);
+            font-size: 16px;
         }
 
-        .features {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        /* Process */
+        .process {
+            padding: 100px 0;
         }
 
-        .feature {
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
             text-align: center;
-            padding: 1.5rem;
+            padding: 20px;
         }
 
-        .feature-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
+        .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 auto 20px;
         }
 
-        .feature h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .notice {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 4px;
         }
 
-        .testimonials .section-title {
-            color: white;
+        .notice p {
+            color: #856404;
+            font-weight: 500;
         }
 
-        .testimonial-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #ffd700;
-        }
-
-        /* Contact Form */
+        /* Contact */
         .contact {
-            padding: 5rem 2rem;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: var(--white);
         }
 
-        .contact-container {
+        .contact h2 {
+            color: var(--white);
+        }
+
+        .contact p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            color: var(--text);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: #764ba2;
+            margin-bottom: 8px;
             font-weight: 500;
         }
 
@@ -260,95 +277,80 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem;
+        .btn-submit {
+            background-color: var(--accent);
+            color: var(--white);
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
-            transition: transform 0.3s;
+            width: 100%;
+            transition: background 0.3s;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
+        .btn-submit:hover {
+            background-color: #d35400;
         }
 
         /* Footer */
         footer {
-            background: #2d3748;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            background-color: #1a252f;
+            color: rgba(255,255,255,0.7);
+            padding: 50px 0 20px;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .social-links {
-            margin: 1.5rem 0;
+        .footer-column h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
         }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 1rem;
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
-            transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: #ffd700;
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
         }
 
-        .contact-info {
-            margin: 1.5rem 0;
-        }
-
-        .contact-info p {
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .nav-links {
+                display: none;
             }
-
-            .hero-content p {
-                font-size: 1.2rem;
+            
+            .hero h1 {
+                font-size: 36px;
             }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
+            
+            .process-steps {
+                flex-direction: column;
             }
         }
     </style>
@@ -356,165 +358,160 @@
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <div class="logo">Rasca<span>Repara</span> 🐱</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">RAPAZA</div>
+                <div class="nav-links">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#proceso">Proceso</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <a href="#contacto" class="btn-contact">Solicitar Presupuesto</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>¡No lo tires, repáralo! 🛠️</h1>
-            <p>Especialistas en la reparación y restauración de rascadores para gatos. Damos una segunda vida al rascador favorito de tu michi.</p>
-            <a href="#contacto" class="btn">Solicitar Presupuesto Gratis</a>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Especialistas en Restauración de Rascadores Profesionales</h1>
+            <p>Extienda la vida útil de sus equipos con nuestros servicios técnicos especializados. Soluciones duraderas para hogares y centros felinos.</p>
+            <a href="#contacto" class="btn-hero">Consultar Servicio</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="servicios">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🔄</div>
-                <h3>Reemplazo de Cuerdas</h3>
-                <p>Sustituimos las cuerdas de sisal desgastadas por nuevas de alta calidad, resistentes y duraderas para que tu gato siga disfrutando.</p>
+    <!-- Services -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios Técnicos</h2>
+                <p>Intervenciones especializadas para recuperar la funcionalidad y estética de sus rascadores.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🪑</div>
-                <h3>Reparación de Estructura</h3>
-                <p>Arreglamos bases inestables, columnas dañadas y plataformas rotas. Seguridad ante todo para tu mascota.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🧼</div>
-                <h3>Limpieza Profunda</h3>
-                <p>Eliminamos olores, manchas y bacterias acumuladas. Tu rascador quedará como nuevo, higiénico y fresco.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Personalización</h3>
-                <p>Añadimos nuevas plataformas, juguetes colgantes o cambiamos colores. ¡Hazlo único!</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Recolección a Domicilio</h3>
-                <p>Recogemos tu rascador en casa y te lo devolvemos completamente restaurado. ¡Sin preocupaciones!</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💰</div>
-                <h3>Presupuesto Sin Compromiso</h3>
-                <p>Evalúa si vale la pena reparar vs comprar uno nuevo. Te asesoramos honestamente.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Reestructuración de Base</h3>
+                    <p>Refuerzo de estabilidad y nivelación de bases inestables. Sustitución de componentes estructurales dañados para garantizar la seguridad del equipo.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Sustitución de Superficies</h3>
+                    <p>Reemplazo completo de cuerdas de sisal desgastadas y plataformas cubiertas de tela. Utilizamos materiales de alta densidad y resistencia.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Reparación de Columnas</h3>
+                    <p>Consolidación de columnas torcidas o dañadas. Refuerzo interno para prevenir futuras deformaciones y asegurar la verticalidad.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Revisión técnica completa, ajuste de tornillería y tratamiento de maderas para prolongar la vida operativa del mobiliario felino.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-us" id="nosotros">
-        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-        <div class="features">
-            <div class="feature">
-                <div class="feature-number">1</div>
-                <h3>Eco-Friendly</h3>
-                <p>Reparar es más sostenible que comprar nuevo. Reducimos residuos y cuidamos el planeta.</p>
+    <!-- Process -->
+    <section id="proceso" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Metodología de Trabajo</h2>
+                <p>Proceso estandarizado para asegurar resultados consistentes y profesionales.</p>
             </div>
-            <div class="feature">
-                <div class="feature-number">2</div>
-                <h3>Ahorro Económico</h3>
-                <p>Reparar cuesta hasta un 70% menos que comprar un rascador nuevo de similar calidad.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Evaluación Técnica</h3>
+                    <p>Análisis detallado del estado del equipo mediante fotografías o vídeo enviado por el cliente para determinar la viabilidad de la reparación.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Presupuesto Cerrado</h3>
+                    <p>Emisión de cotización detallada con costes de materiales y mano de obra. Sin costes ocultos ni sorpresas finales.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Entrega en Taller</h3>
+                    <p>El cliente transporta el equipo a nuestras instalaciones técnicas. Realizamos la intervención en un plazo de 5-7 días laborables.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Recogida y Pago</h3>
+                    <p>Una vez finalizada la restauración, el cliente recoge el equipo en nuestro taller y abona el servicio acordado.</p>
+                </div>
             </div>
-            <div class="feature">
-                <div class="feature-number">3</div>
-                <h3>Vínculo Emocional</h3>
-                <p>Tu gato ya conoce y ama su rascador. ¿Por qué cambiarlo si podemos restaurarlo?</p>
-            </div>
-            <div class="feature">
-                <div class="feature-number">4</div>
-                <h3>Garantía de Calidad</h3>
-                <p>Todos nuestros trabajos tienen 6 meses de garantía. Confianza y seguridad garantizadas.</p>
+            
+            <div class="notice">
+                <p><strong>Nota Importante sobre Logística:</strong> Rapaza opera exclusivamente bajo la modalidad de entrega y recogida en nuestro taller central. No disponemos de servicio de recogida a domicilio ni envíos postales. El cliente es responsable del transporte del equipo hasta nuestras instalaciones.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonios">
-        <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p>"Mi gato estaba muy apego a su rascador viejo. Pensé que tendría que comprar uno nuevo, pero RascaRepara lo dejó increíble. ¡Y mi gato está feliz!"</p>
-                <div class="testimonial-author">- María González y su gato Luna ⭐⭐⭐⭐⭐</div>
+    <!-- Contact -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto Profesional</h2>
+                <p>Solicite una evaluación técnica o resuelva sus dudas comerciales.</p>
             </div>
-            <div class="testimonial-card">
-                <p>"Servicio rápido y profesional. Recogieron el rascador en casa y en 3 días lo tenía como nuevo. El precio fue mucho mejor de lo esperado."</p>
-                <div class="testimonial-author">- Carlos Rodríguez y sus gatos Max y Mina ⭐⭐⭐⭐⭐</div>
+            <div class="contact-form">
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico Corporativo o Personal</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono de Contacto</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Tipo de Equipo</label>
+                        <select id="type">
+                            <option value="torre">Torre Multi-nivel</option>
+                            <option value="columna">Columna Individual</option>
+                            <option value="pared">Panel de Pared</option>
+                            <option value="otro">Otro / Mobiliario Integrado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Descripción de la Incidencia</label>
+                        <textarea id="message" rows="5" placeholder="Describa brevemente los daños o el trabajo necesario..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Solicitud de Evaluación</button>
+                </form>
             </div>
-            <div class="testimonial-card">
-                <p>"Excelente trabajo. No solo repararon las cuerdas, sino que añadieron una plataforma extra. Mi gata ahora tiene más espacio para jugar."</p>
-                <div class="testimonial-author">- Ana Martínez y su gata Bella ⭐⭐⭐⭐⭐</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact" id="contacto">
-        <h2 class="section-title">Solicita Tu Presupuesto</h2>
-        <div class="contact-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
-                </div>
-                <div class="form-group">
-                    <label for="servicio">Tipo de Servicio</label>
-                    <select id="servicio" name="servicio" required>
-                        <option value="">Selecciona un servicio</option>
-                        <option value="cuerdas">Reemplazo de Cuerdas</option>
-                        <option value="estructura">Reparación de Estructura</option>
-                        <option value="limpieza">Limpieza Profunda</option>
-                        <option value="personalizacion">Personalización</option>
-                        <option value="completo">Pack Completo</option>
-                        <option value="otro">Otro / Consulta</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Descripción del Problema</label>
-                    <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesita tu rascador, fotos adjuntas ayudan..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar Solicitud 📩</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="logo">Rasca<span>Repara</span> 🐱</div>
-            <div class="contact-info">
-                <p>📍 Calle de los Gatos 123, Madrid, España</p>
-                <p>📞 +34 900 123 456</p>
-                <p>✉️ info@rascarepara.com</p>
-                <p>⏰ Lunes a Sábado: 9:00 - 20:00</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>RAPAZA</h4>
+                    <p>Especialistas en mantenimiento y restauración de mobiliario para felinos. Soluciones técnicas profesionales.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proceso">Metodología</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Información Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#">📘</a>
-                <a href="#">📷</a>
-                <a href="#">🐦</a>
-                <a href="#">📺</a>
+            <div class="copyright">
+                <p>&copy; 2023 Rapaza Restauraciones. Todos los derechos reservados.</p>
             </div>
-            <p>&copy; 2024 RascaRepara. Todos los derechos reservados. Hecho con ❤️ para los amantes de los gatos.</p>
         </div>
     </footer>
 
@@ -523,31 +520,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form submission handling
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo en menos de 24 horas. 🐱');
+            alert('Gracias por contactar con Rapaza. Hemos recibido su solicitud de evaluación y nos pondremos en contacto en menos de 24 horas.');
             this.reset();
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(102, 126, 234, 0.98)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
         });
     </script>
 </body>
